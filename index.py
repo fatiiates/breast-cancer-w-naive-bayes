@@ -78,28 +78,33 @@ def mean_std(estimator, X, y):
     return df.mean(), df.std()
 
 
-def drawROC():
+def drawROC(dataset):
     bc = datasets.load_breast_cancer()
-    X = bc.data
-    y = bc.target
-
-    X, y = X[y != 2], y[y != 2]
+    X = dataset.drop(['diagnosis'],axis=1)#bc.data
+    X = (X - np.min(X)) / (np.max(X) - np.min(X))
+    dataset["diagnosis"].replace({"B": "0", "M": "1"}, inplace=True)
+    y = dataset.diagnosis#bc.target
+    
+    #print(y.shape)
+    #X, y = X[y != 2], y[y != 2]
     n_samples, n_features = X.shape
-
+    #X = bc.data
     # Add noisy features
     random_state = np.random.RandomState(0)
     X = np.c_[X, random_state.randn(n_samples, 200 * n_features)]
     cv = StratifiedKFold(n_splits=10)
     classifier = GaussianNB()
-
+    y = bc.target
     mean_tpr = 0.0
     mean_fpr = np.linspace(0, 1, 100)
     aucs = []
     colors = cycle(['cyan', 'indigo', 'seagreen', 'red', 'blue', 'darkorange'])
     lw = 2
-
+    
+    #print(X)
     i = 0
     for (train, test), color in zip(cv.split(X, y), colors):
+        #print(train)
         probas_ = classifier.fit(X[train], y[train]).predict_proba(X[test])
         # Compute ROC curve and area the curve
         fpr, tpr, thresholds = roc_curve(y[test], probas_[:, 1])
@@ -214,7 +219,7 @@ def main():
         elif expected == 7:
             learningCurve(estimator=GaussianNB(), X=dataset.drop(["diagnosis"], axis=1), y=dataset.diagnosis)
         elif expected == 8:
-            drawROC()
+            drawROC(dataset)
         elif expected == 9:
             confusionMatrix(tn, fp, fn, tp)
         elif expected == 10:
