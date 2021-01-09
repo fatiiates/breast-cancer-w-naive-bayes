@@ -122,6 +122,7 @@ def drawROC(dataset):
     mean_tpr /= cv.get_n_splits(X, y)
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
+    print(aucs)
     print("AUC (mean): {0}".format(mean_auc))
     print("Standart sapma: {0}\n".format(np.std(aucs)))
     plt.plot(mean_fpr, mean_tpr, color='g',
