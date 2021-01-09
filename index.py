@@ -125,6 +125,7 @@ def drawROC(dataset):
     # Ortalama AUC değeri hesapalnıyor
     mean_auc = auc(mean_fpr, mean_tpr)
     # Veriler ekrana yazdırılıyor
+    print(aucs)
     print("AUC (mean): {0}".format(mean_auc))
     print("Standart sapma: {0}\n".format(np.std(aucs)))
     # Plota ortalama ROC eğrisi ekleniyor
