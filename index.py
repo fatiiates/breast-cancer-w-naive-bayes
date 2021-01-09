@@ -131,23 +131,23 @@ def drawROC():
     plt.show()
 
 
-def learningCurve(estimator=None, title="GaussianNB", X=None, y=None, cv=None,
-                  n_jobs=None, train_sizes=np.linspace(.1, 1.0, 5)):
+def learningCurve(estimator=None, title="GaussianNB", X=None, y=None, cv=2,
+                  n_jobs=None, train_sizes=np.linspace(.1, .9, 9)):
 
     _, axes = plt.subplots(figsize=(7, 5))
 
     axes.set_title(title)
 
     axes.set_xlabel("Training examples")
-    axes.set_ylabel("Score")
-
+    axes.set_ylabel("Accuracy(mean)")
+    print(train_sizes)
     train_sizes, train_scores, test_scores, fit_times, _ = \
         learning_curve(estimator, X, y, cv=cv, n_jobs=n_jobs,
                        train_sizes=train_sizes,
-                       return_times=True)
+                       return_times=True, random_state=16)
     train_scores_mean = np.mean(train_scores, axis=1)
     train_scores_std = np.std(train_scores, axis=1)
-
+    print(train_scores)
     # Plot learning curve
     axes.grid()
     axes.fill_between(train_sizes, train_scores_mean - train_scores_std,
@@ -185,7 +185,7 @@ def main():
     dataset = importData()
 
     data_train, data_test, result_train, result_test = normalizeData(dataset)
-
+    
     nb = GaussianNB()
     nb.fit(data_train, result_train)
 
@@ -212,7 +212,7 @@ def main():
         elif expected == 6:
             f_measure(tp, fp, fn)
         elif expected == 7:
-            learningCurve(estimator=nb, X=data_train, y=result_train)
+            learningCurve(estimator=GaussianNB(), X=dataset.drop(["diagnosis"], axis=1), y=dataset.diagnosis)
         elif expected == 8:
             drawROC()
         elif expected == 9:
