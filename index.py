@@ -218,7 +218,7 @@ def main():
         elif expected == 9:
             confusionMatrix(tn, fp, fn, tp)
         elif expected == 10:
-            mean_std(nb, data_train, result_train)
+            mean_std(nb, dataset.drop(['diagnosis'],axis=1), dataset.diagnosis)
         else:
             print("İstek geçersiz, lütfen geçerli bir veri giriniz.\n")
 
