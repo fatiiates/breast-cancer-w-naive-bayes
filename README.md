@@ -2,7 +2,7 @@
 
 ## Özet
 
-&emsp;&emsp;Günümüzde artarak devam eden meme kanseri sorununun teşhis edilmesi aşamasında, bilime katkıda bulunması amacıyla, ABD’nin Wisconsin eyaletindeki meme kanseri hastalarına ait veriler baz alınarak, Naïve Bayes yöntemi ile bir sınıflandırıcı geliştirilmiştir. Önerilen yöntem, daha önce aynı veri seti ile yapılmış bir akademik makale ile karşılaştırılmış ve sonuçlarıyla birlikte sunulmuştur. Meme kanserinin erken teşhis edilmesi konusunda her geçen gün ilerlemeler kaydedilmektedir. Geliştirilen sınıflandırıcı %96 oranında doğruluğa sahip olmasıyla beraber erken teşhis aşamasında büyük bir rol oynaması beklenmektedir.
+&emsp;&emsp;Günümüzde artarak devam eden meme kanseri sorununun teşhis edilmesi aşamasında, bilime katkıda bulunması amacıyla, ABD’nin Wisconsin eyaletindeki meme kanseri hastalarına ait veriler baz alınarak, Naïve Bayes yöntemi ile bir sınıflandırıcı geliştirilmiştir. Önerilen yöntem, daha önce aynı veri seti ile yapılmış bir akademik makale ile karşılaştırılmış ve sonuçlarıyla birlikte sunulmuştur. Meme kanserinin erken teşhis edilmesi konusunda her geçen gün ilerlemeler kaydedilmektedir. Geliştirilen sınıflandırıcı %95 oranında doğruluğa sahip olmasıyla beraber erken teşhis aşamasında büyük bir rol oynaması beklenmektedir.
 
 ## Kanser ve Meme Kanseri
 
