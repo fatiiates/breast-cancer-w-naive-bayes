@@ -13,7 +13,7 @@ Araştırmalara göre dünyada her yıl 2.1 milyon kadın, ülkemizde ise 20 bin
 - ### BAYES TEOREMİ
     - Bayes teoremi, olasılık kuramı içinde incelenen önemli bir konudur. Bu teorem bir rastgele değişken için olasılık dağılımı içinde koşullu olasılıklar ile marjinal olasılıklar arasındaki ilişkiyi gösterir. Bu kavram için Bayes Kuralı, Bayes Savı veya Bayes Kanunu adları da kullanılır. Bayes Teoreminde B olasılığının gerçekleşme durumu altında A olasılığının gerçekleşme durumu Denklem 2.1 ile açıklanabilir.
     Denklem 2.1: ![\Large x=P(A|B)=\frac{P(A|B)*P(A)}{P(B)}](https://latex.codecogs.com/svg.latex?\Large&space;P(A|B)=\frac{P(A|B)*P(A)}{P(B)})
-    
+    <br/>
     P(A) ve P(B); A ve B olaylarının marjinal olasılıklarıdır. Burada önsel olasılık Bayes teoremine öznellik katar. Diğer bir ifadeyle örneğin P(A) henüz elde veri toplanmadan A olayı hakkında sahip olunan bilgidir. Diğer taraftan P(B|A) ardıl olasılıktır çünkü veri toplandıktan sonra, A olayının gerçekleşmiş olduğu durumlarda B olayının gerçekleşme ihtimali hakkında bilgi verir.[5]
 
 - ###
